@@ -6,7 +6,9 @@ module.exports = {
 			storageName: "bmwousiosanalyticsdev",
 		    storageKey: "0hGv24c/aZY2p4jDg3FXAwUyYP7G/mAr4IcvrGUT6k7A9bDOtbgQnzrEVvryBb5ZXpdTxvlhdnhQCRH525cDrw==",
 		    partitionKey: constants.public_id,
-		    tableName: "TermsAndConditions"
+		    tableName: "TermsAndConditions",
+			storagetarget:"DefaultEndpointsProtocol=https;AccountName=stroageservice;AccountKey=0DkZ+mgsije5hY3t+WeC+0NDWU45qCUt/92CNgxdLO2aE0NgA84jJCBtKRSyNh/L+qzhkgzmuvX1wLwvQvG5ug==;EndpointSuffix=core.chinacloudapi.cn"
+		
 		},
 		int: {
 			storageName: "bmwousiosanalyticsint",

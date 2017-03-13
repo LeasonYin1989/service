@@ -41,12 +41,6 @@ router.storageService = function(req, res, next) {
         return;
     }    
 
-    const clientData = parser.parseClientData(targetService, req.headers, req.body); 
-    const accountName= serviceManager[targetService][config.region][config.level].storageName;
-    const accountKey = serviceManager[targetService][config.region][config.level].storageKey;
-	const connection = serviceManager[targetService][config.region][config.level].storagetarget;
-	res.json({"status":-1,"msg":accountName+accountKey+connection});
-	return;
 
     // Create Default Analytics Properties    
     analyticsProps = analytics.initializeAnalytics(clientData, targetService);

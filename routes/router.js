@@ -74,7 +74,8 @@ function storeInTable(clientData, targetService, props) {
         respond(props.res, constants.storageService, constants.HTTP_STATUS_OK, props.analyticsProps);
     }).catch(function (error) {         
         props.analyticsProps = analytics.createFailureAnalytic(props.analyticsProps, error);
-        respond(props.res, constants.storageService, constants.HTTP_STATUS_BAD_REQUEST, props.analyticsProps);
+       res.json({"status":-1,"msg":error});
+        return;
     });
 }
 

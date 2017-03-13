@@ -41,6 +41,7 @@ router.storageService = function(req, res, next) {
         return;
     }    
 
+    const clientData = parser.parseClientData(targetService, req.headers, req.body);   
 
     // Create Default Analytics Properties    
     analyticsProps = analytics.initializeAnalytics(clientData, targetService);
@@ -73,8 +74,8 @@ function storeInTable(clientData, targetService, props) {
         respond(props.res, constants.storageService, constants.HTTP_STATUS_OK, props.analyticsProps);
     }).catch(function (error) {         
         props.analyticsProps = analytics.createFailureAnalytic(props.analyticsProps, error);
-       res.json({"status":-1,"msg":error});
-        return;
+        res.json({"status":-1,"msg":error});
+		return;
     });
 }
 

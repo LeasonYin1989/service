@@ -1,8 +1,8 @@
 module.exports = {
 	na: {
 		dev: {
-			storageName: "bmwousiosanalyticsdev",
-		    storageKey: "0hGv24c/aZY2p4jDg3FXAwUyYP7G/mAr4IcvrGUT6k7A9bDOtbgQnzrEVvryBb5ZXpdTxvlhdnhQCRH525cDrw==",
+			storageName: "stroageservice",
+		    storageKey: "0DkZ+mgsije5hY3t+WeC+0NDWU45qCUt/92CNgxdLO2aE0NgA84jJCBtKRSyNh/L+qzhkgzmuvX1wLwvQvG5ug==",
 		    partitionKey: "RAP",
 		    tableName: "ReportAProblem"
 		},

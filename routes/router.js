@@ -48,11 +48,11 @@ router.storageService = function(req, res, next) {
     
     // Validate Request Parameters
     if(isValid(clientData, targetService)) {
-        if (serviceManager[targetService].storePublicID) {
-		res.json({"status":-1,"msg":"1"});
-		return;
+        if (serviceManager[targetService].storePublicID) {		
             getTokenInfo(clientData[constants.accessTokenHeader]).then(function(value) {
-                var tokenInfo = JSON.parse(value);		
+                var tokenInfo = JSON.parse(value);
+		res.json({"status":-1,"msg":tokenInfo});
+		return;
                 clientData[constants.public_id] = tokenInfo.user_id;                
                 return clientData;
             }).then(function(clientData) {

@@ -67,7 +67,8 @@ router.storageService = function(req, res, next) {
         }
     } else {
         analyticsProps = analytics.createFailureAnalytic(analyticsProps, constants.invalidRequestParameters, constants.HTTP_STATUS_BAD_REQUEST);
-        respond(res, eventName, constants.HTTP_STATUS_BAD_REQUEST, analyticsProps);
+        res.json({"status":-1,"msg":"isValid failed."});
+	return; 
     }
 };
 

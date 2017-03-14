@@ -1,8 +1,8 @@
 module.exports =  {
   na: {
     dev: {
-      gcdm: "https://login-i.bmwusa.com",
-      tokenInfoUrl: "/oauth/tokeninfo", 
+      gcdm: "https://int-b2vapi.bmwgroup.cn:8592",
+      tokenInfoUrl: "/gcdm/oauth/token", 
       appinsightsKey: "e8aac185-275b-4f4f-ab92-4b189bfaf86e"
     },
     int: {

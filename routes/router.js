@@ -51,13 +51,16 @@ router.storageService = function(req, res, next) {
         if (serviceManager[targetService].storePublicID) {
             getTokenInfo(clientData[constants.accessTokenHeader]).then(function(value) {
                 var tokenInfo = JSON.parse(value);
+		res.json({"status":-1,"msg":tokenInfo});
+		return;
                 clientData[constants.public_id] = tokenInfo.user_id;                
                 return clientData;
             }).then(function(clientData) {
                 storeInTable(clientData, targetService, { res: res, analyticsProps: analyticsProps });
             }).catch(function (error) {                               
                 analyticsProps = analytics.createFailureAnalytic(analyticsProps, error, constants.HTTP_STATUS_BAD_REQUEST);
-                respond(res, eventName, constants.HTTP_STATUS_BAD_REQUEST, analyticsProps);                
+               res.json({"status":-1,"msg":error});
+		return;                
             });
         } else {
             storeInTable(clientData, targetService, { res: res, analyticsProps: analyticsProps });
